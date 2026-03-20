@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>단기북스</title>
+    <title>단기 북스</title>
 
+    <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
-
 </head>
 
 <body>
@@ -21,36 +20,34 @@
                 <div id="login">
                     <ul>
                         <li><a href="#">로그인</a></li>
+                        <li>|</li>
                         <li><a href="#">회원가입</a></li>
+                        <li>|</li>
                         <li><a href="#">장바구니</a></li>
+                        <li>|</li>
                         <li><a href="#">고객센터</a></li>
+                        <li>|</li>
                         <li><a href="#">내 강의실</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div id="header_main">
-            <div class="container">
-                <div class="header_inner">
-                    <div class="logo">
-                        <img src="./img/header_logo_dangibooks.png" alt="로고">
-                    </div>
-
-                    <select class="dropdown-select">
-                        <option>공단기</option>
-                        <option>기술단기</option>
-                        <option>소방단기</option>
-                        <option>공기업단기</option>
-                        <option>자단기</option>
-                        <option>영단기</option>
-                        <option>노무사단기</option>
-                        <option>법무사단기</option>
-                    </select>
-                </div>
+            <div class="logo">
+                <img src="./img/header_logo_dangibooks.png" alt="로고">
             </div>
-        </div>
+            <select class="site_select">
+                <option>공단기</option>
+                <option>기술단기</option>
+                <option>소방단기</option>
+                <option>공기업단기</option>
+                <option>자단기</option>
+                <option>영단기</option>
+                <option>노무사단기</option>
+                <option>법무사단기</option>
+            </select>
 
+        </div>
         <nav>
             <div class="container">
                 <ul>
@@ -67,58 +64,133 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <aside></aside>
+        <aside id="side_menu">
+            <div class="menu_box">
+
+                <div class="menu_title">
+                    단기북스
+                </div>
+
+                <ul class="menu_list">
+                    <li class="main">홈</li>
+                    <li class="main">전체 교재</li>
+                    <li class="main">베스트셀러</li>
+                    <li class="sub">주간</li>
+                    <li class="sub">월간</li>
+                    <li class="main last">이벤트</li>
+                </ul>
+
+            </div>
+        </aside>
+        </aside>
         <div id="main_content">
             <div id="slider">
-
                 <div id="slider_txt">
+                    <div class="slider_text">
+                        <h2>공단기 <span class="blue">Pick!</span><br>추천 교재</h2>
+                        <p>단기북스 MD가<br>자신있게 추천하는 오늘의 책</p>
+                    </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
                 <!-- Swiper -->
-                <div class="swiper mySwiper">
+                <div class="swiper sliderSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">Slide 1</div>
                         <div class="swiper-slide">Slide 2</div>
                         <div class="swiper-slide">Slide 3</div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
 
             </div>
-            <div id="search"></div>
+            <div id="search">
+                <div class="search_box">
+                    <div class="search_title">교재 검색</div>
+                    <div class="search-container">
+                        <form action="/action_page.php">
+
+                            <input type="text" placeholder="저자명/교재명 검색" name="search">
+
+                            <button type="submit"><img src="./img/search_icon.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <div id="best"></div>
-            <div id="banner"></div>
-            <div id="new"></div>
+
+            <div id="banner"><img src="./img/banner.png" alt="배너"></div>
+
+            <div id="new">
+                <h3>새로 나온 교재</h3>
+                <!-- Swiper -->
+                <div class="swiper newSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                        <div class="swiper-slide">Slide 6</div>
+                        <div class="swiper-slide">Slide 7</div>
+                        <div class="swiper-slide">Slide 8</div>
+                        <div class="swiper-slide">Slide 9</div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-              <div id="login">
-                    <ul>
-                        <li><a href="#">회사소개</a></li>
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#">개인정보처리방침</a></li>
-                        <li><a href="#">강사모집</a></li>
-                    </ul>
-                </div>
+    <footer id="footer">
+    <div class="container">
+
+        <div class="footer_top">
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li>|</li>
+                <li><a href="#">이용약관</a></li>
+                <li>|</li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li>|</li>
+                <li><a href="#">강사모집</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="footer_middle">
+            <p>(주)에스티유니타스</p>
+            <br>
+            <ul>
+                <li>전화번호: 1670-1419</li>
+                <li>|</li>
+                <li>이메일주소 : STunitas_cs@stunitas.com</li>
+                <li>|</li>
+                <li>주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 제타워동)</li><br>
+                <li>대표이사 : 김형국</li>
+                <li>|</li>
+                <li>사업자 등록번호 : 119-86-27573</li>
+                <li>|</li>
+                <li>통신판매업신고 : 2022-서울구로-2373 사용자 정보확인</li>
+                <li>|</li>
+                <li>호스팅제공자 : © 2022, Amazon Web Services, Inc</li>
+                
+            </ul>
+        </div>
+
+    </div>
+</footer>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-
+    <script src="./js/swiper.js"></script>
+    <script src="./js/book.js"></script>
 </body>
 
 </html>
