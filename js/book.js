@@ -46,3 +46,90 @@ async function bookData() {
 }
 
 bookData();
+
+async function bestSellerData() {
+
+    const params = new URLSearchParams({
+        target: "title",
+        query: "공무원 기출문제",
+        size: 10
+    });
+
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                Authorization: "KakaoAK 38e2e14d7f21aa9270502efe4b79ba51"
+            }
+        });
+
+        const data = await response.json();
+
+        const bestItems = document.querySelectorAll("#best .best_item");
+
+        bestItems.forEach((item, i) => {
+
+            const book = data.documents[i];
+            if (!book) return;
+
+            item.innerHTML = `
+    <img src="${book.thumbnail}">
+    <div class="rank">${i + 1}</div>
+    <h4 class="title">${book.title}</h4>
+    <p class="author">${book.authors}</p>
+    <p class="price">${book.price}원</p>
+`;
+        });
+
+    } catch (error) {
+        console.log("에러 발생", error);
+    }
+}
+
+bestSellerData()
+
+
+// 슬라이더 북
+async function sliderBookData() {
+
+    const params = new URLSearchParams({
+        target: "title",
+        query: "공무원 영어 기출문제",
+        size: 3
+    });
+
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                Authorization: "KakaoAK 38e2e14d7f21aa9270502efe4b79ba51"
+            }
+        });
+
+        const data = await response.json();
+
+        const slides = document.querySelectorAll("#slider .swiper-slide");
+
+        slides.forEach((slide, i) => {
+
+            const book = data.documents[i];
+            if (!book) return;
+
+            slide.innerHTML = `
+    <img src="${book.thumbnail}">
+
+    <div class="book_text">
+        <h3>${book.title}</h3>
+        <p>${book.authors}</p>
+    </div>
+`;
+        });
+
+    } catch (error) {
+        console.log("슬라이더 오류", error);
+    }
+}
+
+sliderBookData();
