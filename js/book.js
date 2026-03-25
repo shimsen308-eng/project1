@@ -1,3 +1,5 @@
+// 새로나온교재
+
 async function bookData() {
     const params = new URLSearchParams({
         target: "title",
@@ -32,11 +34,13 @@ async function bookData() {
             if (!doc) return; // 데이터가 부족할 경우 생략
 
             // 요소 생성 및 추가
-            box.innerHTML = `<img src="${data.documents[i].thumbnail}">
+            box.innerHTML = `
+                <a href="#">
+        <img src="${doc.thumbnail}">
+             </a>
                     <h3>${data.documents[i].title}</h3>
                     <h6>${data.documents[i].authors}</h6>
                     <p>${data.documents[i].price}</p>
-                    <button>click</button>
                     `
         });
 
@@ -47,6 +51,8 @@ async function bookData() {
 
 bookData();
 
+
+// 베스트셀러
 async function bestSellerData() {
 
     const params = new URLSearchParams({
@@ -118,13 +124,16 @@ async function sliderBookData() {
             if (!book) return;
 
             slide.innerHTML = `
-    <img src="${book.thumbnail}">
+<a href="book-detail.html?isbn=${book.isbn}" class="slide_link"></a>
 
-    <div class="book_text">
-        <h3>${book.title}</h3>
-        <p>${book.authors}</p>
-    </div>
+<img src="${book.thumbnail}">
+
+<div class="book_text">
+    <h3>${book.title}</h3>
+    <p>${book.authors}</p>
+</div>
 `;
+
         });
 
     } catch (error) {
