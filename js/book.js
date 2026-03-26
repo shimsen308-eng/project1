@@ -124,7 +124,6 @@ async function sliderBookData() {
             if (!book) return;
 
             slide.innerHTML = `
-<a href="book-detail.html?isbn=${book.isbn}" class="slide_link"></a>
 
 <img src="${book.thumbnail}">
 
@@ -142,3 +141,47 @@ async function sliderBookData() {
 }
 
 sliderBookData();
+
+
+// 서브페이지 상세정보
+async function bookDetail() {
+
+    const params = new URLSearchParams({
+        target: "title",
+        query: "공무원 영어 기출문제",   // 여기만 바꾸면 다른 책 불러옴
+        size: 1
+    });
+
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    const response = await fetch(url, {
+        headers: {
+            Authorization: "KakaoAK 38e2e14d7f21aa9270502efe4b79ba51"
+        }
+    });
+
+    const data = await response.json();
+    const book = data.documents[0];
+
+    document.getElementById("book_title").innerText = book.title;
+
+      // 이미지 넣기
+    // document.getElementById("book_img").src = book.thumbnail;
+
+     // 가격 넣기
+    document.getElementById("price").innerText = book.price + "원";
+
+    // 저자 넣기  
+    document.getElementById("author").innerText = book.authors;
+
+    // 출판사 넣기
+    document.getElementById("publisher").innerText = book.publisher;
+
+    // 등록일
+    document.getElementById("date").innerText = book.datetime.substring(0, 10);
+
+}
+
+bookDetail();
+
+

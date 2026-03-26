@@ -28,3 +28,19 @@ var new_swiper = new Swiper(".newSwiper", {
     },
     slidesPerGroup: 3
 });
+
+
+
+// 서브페이지 스와이퍼
+const authorSwiper = new Swiper('.authorSwiper', {
+  slidesPerView: 2,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+   autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    }
+});

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단기 북스</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/sub.css">
+</head>
+
+<body>
+    <header>
+        <div id="header_top">
+            <div class="container">
+                <div id="login">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li>|</li>
+                        <li><a href="#">회원가입</a></li>
+                        <li>|</li>
+                        <li><a href="#">장바구니</a></li>
+                        <li>|</li>
+                        <li><a href="#">고객센터</a></li>
+                        <li>|</li>
+                        <li><a href="#">내 강의실</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="header_main">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./img/header_logo_dangibooks.png" alt="로고">
+                </a>
+            </div>
+            <select class="site_select">
+                <option>공단기</option>
+                <option>기술단기</option>
+                <option>소방단기</option>
+                <option>공기업단기</option>
+                <option>자단기</option>
+                <option>영단기</option>
+                <option>노무사단기</option>
+                <option>법무사단기</option>
+            </select>
+
+        </div>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#">공단기 홈</a></li>
+                    <li><a href="#">선생님</a></li>
+                    <li><a href="#">수강신청</a></li>
+                    <li><a href="#">수험정보</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">교재</a></li>
+                    <li><a href="#">풀서비스</a></li>
+                    <li><a href="#">프리패스</a></li>
+                    <li><a href="#">프리미엄 서비스</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <div id="sub">
+
+            <h3>공단기 > 단기북스 > 공무원</h3>
+
+            <!-- 왼쪽 상품 이미지 -->
+            <div id="product">
+                <img id="book_img" src="./img/subbook.jpg">
+            </div>
+
+            <h2 id="book_title"></h2>
+
+            <!-- 오른쪽 상품 정보 -->
+            <table>
+
+                <tr>
+                    <td>판매가</td>
+                    <td id="price"></td>
+                </tr>
+
+                <tr>
+                    <td>배송비</td>
+
+                    <td>3,000원
+                        <p>20,000원 이상 구매시 무료배송</p>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>저자</td>
+                    <td id="author"></td>
+                </tr>
+
+                <tr>
+                    <td>출판사</td>
+                    <td id="publisher"></td>
+                </tr>
+
+                <tr>
+                    <td>등록일</td>
+                    <td id="date"></td>
+                </tr>
+
+                <tr>
+                    <td>수량</td>
+                    <td>
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button>장바구니</button>
+                        <button>바로 예약하기</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <div class="author_slide">
+
+            <h3 class="slide_title">선생님 신규 교재</h3>
+
+            <div class="swiper authorSwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">교재 1</div>
+                    <div class="swiper-slide">교재 2</div>
+                    <div class="swiper-slide">교재 3</div>
+                    <div class="swiper-slide">교재 4</div>
+
+                </div>
+
+                <!-- 화살표 -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+        </div>
+
+
+
+        <section>
+            <ul class="tab_menu">
+                <li class="active">상품정보</li>
+                <li>교재후기</li>
+                <li>분철 안내</li>
+                <li>배송/교환/반품</li>
+            </ul>
+
+            <div class="tabcontent">내용1</div>
+            <div class="tabcontent">내용2</div>
+            <div class="tabcontent">내용3</div>
+            <div class="tabcontent">내용4</div>
+        </section>
+
+
+        <div class="notice">
+            <p><strong>분철 도서:</strong> 주문 후 4일 이내 출고됩니다. (평일 기준)</p>
+            <p><strong>예약 판매:</strong> 재고 없는 도서는 배송 지연 가능</p>
+            <p><strong>분철 PCS:</strong> 600페이지 이상 분권됩니다.</p>
+            <p>…(나머지 내용 이어짐...)</p>
+        </div>
+        <footer id="footer">
+            <div class="container">
+
+                <div class="footer_top">
+                    <br>
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li>|</li>
+                        <li><a href="#">이용약관</a></li>
+                        <li>|</li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li>|</li>
+                        <li><a href="#">강사모집</a></li>
+                    </ul>
+                </div>
+                <br>
+                <div class="footer_middle">
+                    <p>(주)에스티유니타스</p>
+                    <ul>
+                        <li>전화번호: 1670-1419</li>
+                        <li>|</li>
+                        <li>이메일주소 : STunitas_cs@stunitas.com</li>
+                        <li>|</li>
+                        <li>주소 : 서울특별시 구로구 경인로 662, 15층 (신도림동, 디큐브시티 제타워동)</li>
+                        <li>대표이사 : 김형국</li>
+                        <li>|</li>
+                        <li>사업자 등록번호 : 119-86-27573</li>
+                        <li>|</li>
+                        <li>통신판매업신고 : 2022-서울구로-2373 사용자 정보확인</li>
+                        <li>|</li>
+                        <li>호스팅제공자 : © 2022, Amazon Web Services, Inc</li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script src="./js/swiper.js"></script>
+        <script src="./js/book.js"></script>
+        <script src="./js/tab.js"></script>
+</body>
+
+</main>
+
+</html>
