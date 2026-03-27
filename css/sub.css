@@ -3,47 +3,59 @@
 main {
     width: 1140px;
     margin: 0 auto;
-    background-color: rgb(202, 247, 200);
 }
 
-* {box-sizing:border-box;}
+* {
+    box-sizing: border-box;
+}
 
 main h3 {
     font-size: 13px;
     font-weight: 400;
 }
 
-#sub {width:1100px; height:600px; margin:0 auto; box-sizing:border-box; position:relative;overflow: hidden; }
+#sub {
+    width: 1100px;
+    height: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
 
 
 #product {
-    width:500px;
-    height:500px;
-    background-color:#eee;
+    width: 500px;
+    height: 500px;
+    background-color: #f5f4f4;
     border-radius: 12px;
-    float:left;
-    margin-top:70px;
-    margin-left:30px;
+    float: left;
+    margin-top: 70px;
+    margin-left: 30px;
 }
 
 #product img {
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
+    background-color: #fff;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    margin-top: 70px;
 }
-
-h3 {padding:10px 0 0 30px; font-size:20px;}
 
 
 table {
     width: 500px;
-    border-top: 3px solid #e9e9e9;
-    border-bottom: 1px solid #e9e9e9;
+    /* border-top: 3px solid #e9e9e9;
+    border-bottom: 3px solid #e9e9e9; */
     float: right;
     margin-top: 10px;
 }
 
-table p {font-size: 12px;}
+table p {
+    font-size: 12px;
+}
 
 #book_title {
     width: 500px;
@@ -55,23 +67,53 @@ table p {font-size: 12px;}
 }
 
 
-td {padding:6px 15px;}
+td {
+    padding: 6px 15px;
+}
 
-td:first-child {width:100px; }
+td:first-child {
+    width: 100px;
+}
 
 
 
-button {margin:3px; cursor:pointer;}
+button {
+    margin: 3px;
+    cursor: pointer;
+}
 
-button:first-child {background-color:#fff; width: 200px; border-radius:3px; padding:10px 20px; color: #666; border:none; }
+button:first-child {
+    background-color: #fff;
+    width: 200px;
+    border-radius: 3px;
+    border: 1px solid #666;
+    padding: 10px 20px;
+    color: #666;
+}
 
-button:nth-child(2) {background-color:#2d63d6; width: 200px; border-radius:3px; padding:10px 20px; color:#fff; border:none; }
+button:nth-child(2) {
+    background-color: #2d63d6;
+    width: 200px;
+    border-radius: 3px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+}
 
 
 
 /*form*/
 
-select{width:70px; height:20px; float:left; margin:5px 0 0 0px; font-size:13px; color:#666; border:1px solid #eee; padding:0px 0 0 10px;} 
+select {
+    width: 70px;
+    height: 20px;
+    float: left;
+    margin: 5px 0 0 0px;
+    font-size: 13px;
+    color: #666;
+    border: 1px solid #eee;
+    padding: 0px 0 0 10px;
+}
 
 
 
@@ -79,10 +121,13 @@ select{width:70px; height:20px; float:left; margin:5px 0 0 0px; font-size:13px; 
 
 .author_slide {
     width: 1100px;
-    margin: 60px auto 40px;
+    margin: 40px auto 40px;
 }
 
-.author_slide h3 {font-size: 20px; font-weight: bold;}
+.author_slide h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .slide_title {
     font-size: 22px;
@@ -94,23 +139,82 @@ select{width:70px; height:20px; float:left; margin:5px 0 0 0px; font-size:13px; 
     height: 240px;
 }
 
+.author_slide .swiper-button-next,
+.author_slide .swiper-button-prev {
+    top: 50%;
+    transform: translateY(-80%);
+}
+
 .swiper-slide {
-    background: #f5f5f5;
+    background: #fff;
+    padding: 15px;
+}
+
+.author_book {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
+    gap: 15px;
+}
+
+.author_book img {
+    width: 90px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.book_info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.book_info p:nth-child(2) {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.book_info p:nth-child(3) {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.detail {
+    display: flex;
+}
+
+.detail_wrap {
+    display: flex;
+    gap: 40px;
+    width: 1200px;
+}
+
+.detail_left {
+    width: 750px;
+}
+
+.tabsticky {
+    width: 300px;
+    height: 200px;
+    position: sticky;
+    top: 100px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* 탭메뉴 */
+
+
+
+section {
+    width: 800px;
+    height: auto;
 }
 
 
-
-
-/* 탭메뉴 */
-section {
-    width: 1100px;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 50px;
+.detail_wrap,
+.detail_left {
+    overflow: visible;
+    /* 기본 스크롤 가능 */
 }
 
 .tab_menu {
@@ -127,14 +231,16 @@ section {
 }
 
 .active {
-    background-color: #eee;
+    background-color: #f5f4f4;
 }
 
+
 .tabcontent {
-    display: none;
+    display: block;
+    /* 항상 보이도록 */
     width: 100%;
-    height: 300px;
-    background-color: #eee;
+    padding: 20px 0;
+    /* background-color: #f5f4f4; */
     border-top: 1px solid #aaa;
 }
 
@@ -143,4 +249,113 @@ section {
 }
 
 
-.notice {height: 600px; background-color: rgb(241, 202, 255);}
+/* 책 소개 텍스트 파일 */
+.book_detail h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 0 15px;
+}
+
+.book_detail p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.book_category li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* 목차 텍스트 파일 */
+.book_index h3 {
+    font-size: 18px;
+    margin: 30px 0 15px;
+    font-weight: bold;
+}
+
+.book_index h4 {
+    font-size: 16px;
+    margin: 25px 0 10px;
+}
+
+.book_index h5 {
+    font-size: 15px;
+    margin: 20px 0 8px;
+}
+
+.book_index ul {
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+.book_index li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+/* 서평 텍스트 파일 */
+.publisher_review h3 {
+    font-size: 18px;
+    margin: 30px 0 15px;
+    font-weight: bold;
+}
+
+.publisher_review h4 {
+    font-size: 16px;
+    margin: 25px 0 10px;
+}
+
+.publisher_review h5 {
+    font-size: 15px;
+    margin: 15px 0 8px;
+}
+
+.publisher_review ul {
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+.publisher_review li {
+    font-size: 14px;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+
+/* 교환 텍스트 파일 */
+.return_info h3 {
+    font-size: 18px;
+    margin: 30px 0 15px;
+    font-weight: bold;
+}
+
+.return_info h4 {
+    font-size: 15px;
+    margin: 25px 0 8px;
+}
+
+.return_info p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.return_info ul {
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.return_info li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+
+.book_detail,
+.book_index,
+.publisher_review,
+.return_info {
+    padding-left: 30px;
+}

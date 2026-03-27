@@ -148,7 +148,7 @@ async function bookDetail() {
 
     const params = new URLSearchParams({
         target: "title",
-        query: "공무원 영어 기출문제",   // 여기만 바꾸면 다른 책 불러옴
+        query: "공무원 영어 기출문제",
         size: 1
     });
 
@@ -183,5 +183,98 @@ async function bookDetail() {
 }
 
 bookDetail();
+
+
+
+
+const tabs = document.querySelectorAll(".tab_menu li");
+const contents = document.querySelectorAll(".tabcontent");
+
+/* 1번 탭 */
+tabs[0].addEventListener("click", () => {
+    fetch("introduce.txt")
+        .then(res => res.text())
+        .then(data => {
+            contents[0].innerHTML = data;
+        });
+});
+
+/* 2번 탭 */
+tabs[1].addEventListener("click", () => {
+    fetch("목차.txt")
+        .then(res => res.text())
+        .then(data => {
+            contents[1].innerHTML = data;
+        });
+});
+
+/* 3번 탭 */
+tabs[2].addEventListener("click", () => {
+    fetch("서평.txt")
+        .then(res => res.text())
+        .then(data => {
+            contents[2].innerHTML = data;
+        });
+});
+
+/* 4번 탭 */
+tabs[3].addEventListener("click", () => {
+    fetch("exchange_refund.txt")
+        .then(res => res.text())
+        .then(data => {
+            contents[3].innerHTML = data;
+        });
+});
+
+
+
+
+async function authorSliderData() {
+
+    const params = new URLSearchParams({
+        target: "title",
+        query: "성정혜 공무원 영어",
+        size: 4
+    });
+
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                Authorization: "KakaoAK 38e2e14d7f21aa9270502efe4b79ba51"
+            }
+        });
+
+        const data = await response.json();
+
+        const slides = document.querySelectorAll(".authorSwiper .swiper-slide");
+
+        slides.forEach((slide, i) => {
+
+            const book = data.documents[i];
+            if (!book) return;
+
+            slide.innerHTML = `
+                <div class="author_book">
+
+                    <img src="${book.thumbnail || './img/noimg.jpg'}">
+
+                    <div class="book_info">
+                        <h3>${book.title}</h3>
+                        <p>${book.authors ? book.authors.join(", ") : ""}</p>
+                        <p>${book.price ? book.price.toLocaleString() + "원" : ""}</p>
+                    </div>
+
+                </div>
+            `;
+        });
+
+    } catch (error) {
+        console.log("카카오 API 오류:", error);
+    }
+}
+
+authorSliderData();
 
 
