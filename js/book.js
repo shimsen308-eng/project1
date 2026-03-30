@@ -190,43 +190,33 @@ bookDetail();
 const tabs = document.querySelectorAll(".tab_menu li");
 const contents = document.querySelectorAll(".tabcontent");
 
-/* 1번 탭 */
-tabs[0].addEventListener("click", () => {
-    fetch("introduce.txt")
-        .then(res => res.text())
-        .then(data => {
-            contents[0].innerHTML = data;
-        });
-});
+// 책 소개
+fetch("introduce.txt")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("tab1").innerHTML = data;
+    });
 
-/* 2번 탭 */
-tabs[1].addEventListener("click", () => {
-    fetch("목차.txt")
-        .then(res => res.text())
-        .then(data => {
-            contents[1].innerHTML = data;
-        });
-});
+// 목차
+fetch("목차.txt")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("tab2").innerHTML = data;
+    });
 
-/* 3번 탭 */
-tabs[2].addEventListener("click", () => {
-    fetch("서평.txt")
-        .then(res => res.text())
-        .then(data => {
-            contents[2].innerHTML = data;
-        });
-});
+// 출판사 서평
+fetch("서평.txt")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("tab3").innerHTML = data;
+    });
 
-/* 4번 탭 */
-tabs[3].addEventListener("click", () => {
-    fetch("exchange_refund.txt")
-        .then(res => res.text())
-        .then(data => {
-            contents[3].innerHTML = data;
-        });
-});
-
-
+// 배송/교환/반품
+fetch("exchange_refund.txt")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("tab4").innerHTML = data;
+    });
 
 
 async function authorSliderData() {
@@ -276,5 +266,38 @@ async function authorSliderData() {
 }
 
 authorSliderData();
+
+
+async function bookDetail() {
+
+    const params = new URLSearchParams({
+        target: "title",
+        query: "영어 6개년 기출문제집 9급 공무원 2020 에듀윌",
+        size: 1
+    });
+
+    const url = `https://dapi.kakao.com/v3/search/book?${params}`;
+
+    const response = await fetch(url, {
+        headers: {
+            Authorization: "KakaoAK 38e2e14d7f21aa9270502efe4b79ba51"
+        }
+    });
+
+    const data = await response.json();
+    const book = data.documents[0];
+
+    // ===== 상세페이지 정보 =====
+    document.getElementById("book_title").innerText = book.title;
+    document.getElementById("price").innerText = book.price + "원";
+    document.getElementById("author").innerText = book.authors;
+    document.getElementById("publisher").innerText = book.publisher;
+    document.getElementById("date").innerText = book.datetime.substring(0, 10);
+
+    // ===== 스티키 박스 =====
+    document.getElementById("sticky_title").innerText = book.title;
+    document.getElementById("sticky_price").innerText = book.price + "원";
+}
+
 
 

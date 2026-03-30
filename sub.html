@@ -54,7 +54,7 @@
         <nav>
             <div class="container">
                 <ul>
-                    <li><a href="#">공단기 홈</a></li>
+                    <li><a href="index.html">공단기 홈</a></li>
                     <li><a href="#">선생님</a></li>
                     <li><a href="#">수강신청</a></li>
                     <li><a href="#">수험정보</a></li>
@@ -126,9 +126,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>총 상품 금액</td>
+                    <td class="total_price">16,000원</td>
+                </tr>
+                <tr>
                     <td colspan="2">
                         <button>장바구니</button>
-                        <button>바로 예약하기</button>
+                        <button>바로 구매하기</button>
                     </td>
                 </tr>
             </table>
@@ -171,24 +175,29 @@
                         <li><a href="#tab4">배송/교환/반품</a></li>
                     </ul>
 
-                    <div id="tab1" class="tabcontent">
-                        <p>책 소개 내용...</p>
-                    </div>
-                    <div id="tab2" class="tabcontent">
-                        <p>목차 내용...</p>
-                    </div>
-                    <div id="tab3" class="tabcontent">
-                        <p>출판사 서평 내용...</p>
-                    </div>
-                    <div id="tab4" class="tabcontent">
-                        <p>배송/교환/반품 내용...</p>
-                    </div>
-
+                    <div id="tab1" class="tabcontent"></div>
+                    <div id="tab2" class="tabcontent"></div>
+                    <div id="tab3" class="tabcontent"></div>
+                    <div id="tab4" class="tabcontent"></div>
                 </div>
-
-                <!-- 오른쪽 sticky -->
                 <div class="tabsticky">
-                    스티키 박스
+
+                    <!-- 책 제목 -->
+                    <h3 id="sticky_title"></h3>
+
+                    <!-- 가격 영역 -->
+                    <div class="sticky_price_box">
+                        <span>총 상품 금액</span>
+                        <strong id="sticky_price"></strong>
+                    </div>
+
+
+                    <!-- 버튼 -->
+                    <div class="sticky_btn_wrap">
+                        <button class="btn_cart">장바구니</button>
+                        <button class="btn_buy">바로 구매하기</button>
+                    </div>
+
                 </div>
 
             </section>
@@ -240,7 +249,7 @@
         <!-- Initialize Swiper -->
         <script src="./js/swiper.js"></script>
         <script src="./js/book.js"></script>
-        <script src="./js/tab.js"></script>
+        <!-- <script src="./js/tab.js"></script> -->
 </body>
 
 </main>

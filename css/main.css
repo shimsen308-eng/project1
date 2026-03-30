@@ -122,7 +122,8 @@ aside {
 }
 
 .menu_title {
-    background: linear-gradient(to right, #2d63d6, #5f86d9);
+    background: linear-gradient(to right, #025af6, 
+#538cf0);
     color: white;
     font-size: 17px;
     font-weight: bold;
@@ -183,7 +184,7 @@ aside {
 }
 
 .blue {
-    color: #2d63d6;
+    color: #025af6;
 }
 
 .slider_text p {
